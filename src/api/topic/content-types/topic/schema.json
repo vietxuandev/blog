@@ -4,7 +4,8 @@
   "info": {
     "singularName": "topic",
     "pluralName": "topics",
-    "displayName": "Topic"
+    "displayName": "Topic",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,12 +21,12 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "articles": {
       "type": "relation",
@@ -38,6 +39,10 @@
       "relation": "manyToOne",
       "target": "api::chap.chap",
       "inversedBy": "topics"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }
