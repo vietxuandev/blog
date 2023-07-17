@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "chaps",
+  "collectionName": "topics",
   "info": {
-    "singularName": "chap",
-    "pluralName": "chaps",
-    "displayName": "Chap",
-    "description": ""
+    "singularName": "topic",
+    "pluralName": "topics",
+    "displayName": "Topic"
   },
   "options": {
     "draftAndPublish": true
@@ -21,29 +20,24 @@
       "required": true
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
     "articles": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
-      "mappedBy": "chap"
+      "mappedBy": "topic"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title",
-      "required": true
-    },
-    "topics": {
+    "chap": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::topic.topic",
-      "mappedBy": "chap"
+      "relation": "manyToOne",
+      "target": "api::chap.chap",
+      "inversedBy": "topics"
     }
   }
 }
