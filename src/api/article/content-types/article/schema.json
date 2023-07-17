@@ -48,12 +48,6 @@
       "target": "api::comment.comment",
       "mappedBy": "article"
     },
-    "chap": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::chap.chap",
-      "inversedBy": "articles"
-    },
     "topic": {
       "type": "relation",
       "relation": "manyToOne",
